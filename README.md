@@ -1,2 +1,5 @@
-# Python-Challenges
-Solution to different python challenges
+# Python Challenges
+1. Power Ball Simulation in Python: 
+--
+2. The capturing rainwater problem: 
+--
