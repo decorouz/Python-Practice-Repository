@@ -1,11 +1,12 @@
 """
-The problem
------------
-Given a list of words, determine whether the words can be chained to form a circle. 
-A word X can be placed in front of another word Y in a circle if the last character of X is same as the first character of Y.
+Given a list of words, determine whether the words can be 
+chained to form a circle. A word X can be placed in front of another 
+word Y in a circle if the last character of X is same as the first 
+character of Y.
 
 For example, the words ['chair', 'height', 'racket', touch', 'tunic'] 
-can form the following circle: chair --> racket --> touch --> height --> tunic --> chair
+can form the following 
+circle: chair --> racket --> touch --> height --> tunic --> chair
 
 """
 from collections import defaultdict
@@ -13,7 +14,7 @@ from collections import defaultdict
 CHARS = 26
 
 
-class Graph(object):
+class Graph:
     """A graph that represents an undirected graph"""
 
     def __init__(self, vertices) -> None:
@@ -31,7 +32,9 @@ class Graph(object):
         visited = [False] * self.vertices  # mark all vertices as unvisited.
 
         n = 0
-        for n in range(self.vertices):  # find the first vertice with nonzero vertex
+        for n in range(
+            self.vertices
+        ):  # find the first vertice with nonzero vertex
             if len(self.adj[n]) > 0:
                 break
 
@@ -58,7 +61,9 @@ class Graph(object):
                 return False
         return True
 
-    def is_eulerian_cycle(self):  # Check if all non-zero degree vertices are connected
+    def is_eulerian_cycle(
+        self,
+    ):  # Check if all non-zero degree vertices are connected
         """
         This function returns true if the directed graph has an eulerian
         cycle, otherwise returns false
