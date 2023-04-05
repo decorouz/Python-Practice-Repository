@@ -27,9 +27,11 @@ class Graph:
         self.adj[v].append(u)
         self.IN[u] += 1
 
-    def isSC(self):
+    def is_sc(self):
         """Method to check if the graph is Eulerian or not"""
-        visited = [False] * self.vertices  # mark all vertices as unvisited.
+
+        # mark all vertices as unvisited.
+        visited = [False] * self.vertices
 
         n = 0
         for n in range(
@@ -42,13 +44,14 @@ class Graph:
 
         # If DFS traversal doesn't visit all vertices, then return false.
         for i in range(self.vertices):
-            if len(self.adj[i]) > 0 and visited[i] == False:
+            if len(self.adj[i]) > 0 and visited[i] is False:
                 return False
 
         gr = self.get_transposed()  # Create a reversed graph
 
         for i in range(self.vertices):
-            visited[i] = False  # Mark all vertices as not visited (second DFS)
+            # Mark all vertices as not visited (second DFS)
+            visited[i] = False
 
         # Do DFS for reversed graph starting from first vertex.
         # Starting Vertex must be same starting point of first DFS
@@ -57,18 +60,17 @@ class Graph:
         for i in range(
             self.vertices
         ):  # If all vertices are not visited on the DFS, then return False
-            if len(self.adj[i]) > 0 and visited[i] == False:
+            if len(self.adj[i]) > 0 and visited[i] is False:
                 return False
         return True
 
-    def is_eulerian_cycle(
-        self,
-    ):  # Check if all non-zero degree vertices are connected
+    def is_eulerian_cycle(self):
         """
         This function returns true if the directed graph has an eulerian
         cycle, otherwise returns false
         """
-        if self.isSC() == False:
+        # Check if all non-zero degree vertices are connected
+        if self.is_sc() is False:
             return False
 
         for i in range(
