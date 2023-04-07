@@ -43,4 +43,14 @@ Output: false
 
 
 ---
+### [Problem 050323](solutions/dcp_05_03.py)
+
+Find the maximum of two numbers without using any if-else statements, branching, or direct comparisons.
+
+Example:
+Inputs: x = 3, y = 4
+Output: 4
+
+
+---
 
