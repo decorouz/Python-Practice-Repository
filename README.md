@@ -38,7 +38,9 @@ Given a binary tree, determine whether or not it is height-balanced. A height-ba
 be defined as one in which the heights of the two subtrees of any node never differ by more than one.
 
 Example:
+
 Input: root = [1,2,2,3,3,null,null,4,4]
+
 Output: false
 
 
@@ -48,7 +50,9 @@ Output: false
 Find the maximum of two numbers without using any if-else statements, branching, or direct comparisons.
 
 Example:
+
 Inputs: x = 3, y = 4
+
 Output: 4
 
 
