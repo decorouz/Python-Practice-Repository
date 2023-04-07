@@ -16,14 +16,14 @@ Implement this algorithm.
 Bonus: Create a generator that produces primes indefinitely (that is, without taking N as an input).
 
 ---
-### [Problem 010223](solutions/dcp_02_03.py)
+### [Problem 020323](solutions/dcp_02_03.py)
 
 You are given an array of integers, where each element represents the maximum number of steps that can be jumped going forward from that element. Write a function to return the minimum number of jumps you must take in order to get from the start to the end of the array.
 
 For example, given [6, 2, 4, 0, 5, 1, 1, 4, 2, 9], you should return 2, as the optimal solution involves jumping from 6 to 5, and then from 5 to 9.
 
 ---
-### [Problem 010323](solutions/dcp_03_03.py)
+### [Problem 030323](solutions/dcp_03_03.py)
 
 Given a list of words, determine whether the words can be chained to form a circle. 
 A word X can be placed in front of another word Y in a circle if the last character of X is same as the first character of Y.
@@ -32,10 +32,14 @@ For example, the words ['chair', 'height', 'racket', touch', 'tunic']
 can form the following circle: chair --> racket --> touch --> height --> tunic --> chair
 
 ---
-### [Problem 010323](solutions/dcp_04_03.py)
+### [Problem 040323](solutions/dcp_04_03.py)
 
 Given a binary tree, determine whether or not it is height-balanced. A height-balanced binary tree can 
 be defined as one in which the heights of the two subtrees of any node never differ by more than one.
+
+Example:
+Input: root = [1,2,2,3,3,null,null,4,4]
+Output: false
 
 
 ---
