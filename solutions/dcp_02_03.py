@@ -11,8 +11,8 @@ as the optimal solution involves jumping from 6 to 5, and then from 5 to 9.
 
 
 def min_number_of_jumps(arr_num, arr_size):
-    """
-    Return the minimum number of jumps
+    """Return the minimum number of jumps.
+
     Given a list [6, 2, 4, 0, 5, 1, 1, 4, 2, 9], you should return 2
 
     :param List: list of integers

@@ -17,7 +17,7 @@ Bonus: Create a generator that produces primes indefinitely
 
 
 def seive_of_eratosthenes(num):
-    """Generate all prime numbers less than N
+    """Generate all prime numbers less than given num.
 
     Parameters
     ----------

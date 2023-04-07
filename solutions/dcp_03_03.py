@@ -1,4 +1,5 @@
-"""
+"""Problem.
+
 Given a list of words, determine whether the words can be 
 chained to form a circle. A word X can be placed in front of another 
 word Y in a circle if the last character of X is same as the first 
@@ -15,32 +16,37 @@ CHARS = 26
 
 
 class Graph:
-    """A graph that represents an undirected graph"""
+    """A graph use to represent an undirected graph."""
 
     def __init__(self, vertices) -> None:
-        self.vertices = vertices  # no of vertices
-        self.adj = defaultdict(list)  # a dynamic array
-        self.IN = [0] * vertices
+        """
+        Parameters
+        ----------
+        vertices: int
+            The number of vertex
+        """
+        self.vertices = vertices
+        self.adj = defaultdict(list)
+        self.inp = [0] * vertices
 
     def add_edge(self, v, u):
-        """Add an edge to the graph"""
+        """Add an edge to the graph."""
         self.adj[v].append(u)
-        self.IN[u] += 1
+        self.inp[u] += 1
 
     def is_sc(self):
-        """Method to check if the graph is Eulerian or not"""
-
+        """Check if the graph is Eulerian or not."""
         # mark all vertices as unvisited.
         visited = [False] * self.vertices
 
-        n = 0
-        for n in range(
-            self.vertices
-        ):  # find the first vertice with nonzero vertex
-            if len(self.adj[n]) > 0:
+        # find the vertex with non-zero degree
+        non_zero_deg_vertex = 0
+        for non_zero_deg_vertex in range(self.vertices):
+            # find the first vertex with nonzero degree vertex
+            if len(self.adj[non_zero_deg_vertex]) > 0:
                 break
 
-        self.DFSUtil(n, visited)
+        self.DFSUtil(non_zero_deg_vertex, visited)
 
         # If DFS traversal doesn't visit all vertices, then return false.
         for i in range(self.vertices):
@@ -57,35 +63,32 @@ class Graph:
         # Starting Vertex must be same starting point of first DFS
         gr.DFSUtil(n, visited)
 
-        for i in range(
-            self.vertices
-        ):  # If all vertices are not visited on the DFS, then return False
+        for i in range(self.vertices):
+            # If all vertices are not visited on the DFS, then return False
             if len(self.adj[i]) > 0 and visited[i] is False:
                 return False
         return True
 
     def is_eulerian_cycle(self):
-        """
-        This function returns true if the directed graph has an eulerian
-        cycle, otherwise returns false
+        """Evaluate to true or false.
+
+        if the directed graph has an eulerian cycle, otherwise returns false.
         """
         # Check if all non-zero degree vertices are connected
         if self.is_sc() is False:
             return False
 
-        for i in range(
-            self.vertices
-        ):  # Check if in degree and out degree of every vertex is same
+        for i in range(self.vertices):
+            # Check if in degree and out degree of every vertex is same
             if len(self.adj[i]) != self.IN[i]:
                 return False
         return True
 
     def DFSUtil(self, v, visited):
+        # Recur for all the vertices adjacent to this vertex
         visited[v] = True  # Mark the current node as visited and print it
 
-        for i in range(
-            len(self.adj[v])
-        ):  # Recur for all the vertices adjacent to this vertex
+        for i in range(len(self.adj[v])):
             if not visited[self.adj[v][i]]:
                 self.DFSUtil(self.adj[v][i], visited)
 
@@ -101,7 +104,7 @@ class Graph:
 # This function takes an of strings and returns true
 # if the given array of strings can be chained to
 # form cycle
-def canBeChained(arr, n):
+def can_be_chained(arr, n):
 
     # Create a graph with 'alpha' edges
     g = Graph(CHARS)
@@ -120,14 +123,14 @@ def canBeChained(arr, n):
 # Driver program
 arr1 = ["for", "geek", "rig", "kaf"]
 n1 = len(arr1)
-if canBeChained(arr1, n1):
+if can_be_chained(arr1, n1):
     print("Can be chained")
 else:
     print("Cant be chained")
 
 arr2 = ["chair", "height", "racket", "touch", "tunic"]
 n2 = len(arr2)
-if canBeChained(arr2, n2):
+if can_be_chained(arr2, n2):
     print("Can be chained")
 else:
     print("Can't be chained")
