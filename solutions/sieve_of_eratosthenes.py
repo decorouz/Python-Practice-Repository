@@ -14,9 +14,10 @@ Bonus: Create a generator that produces primes indefinitely
 (that is, without taking N as an input).
 
 """
+from typing import Generator, Any
 
 
-def seive_of_eratosthenes(num):
+def seive_of_eratosthenes(num: int) -> Generator[int, Any, None]:
     """Generate all prime numbers less than given num.
 
     Parameters
@@ -25,15 +26,19 @@ def seive_of_eratosthenes(num):
         A positive integer
     Return
     ------
-        List: list of prime numbers less than N
+        generator: generator containing list of primes
     """
     # initialize a list of Trues
     true_list = [True for _ in range(num)]
     true_list[0] = true_list[1] = False
 
-    for (i, isprime) in enumerate(true_list):
+    for i, isprime in enumerate(true_list):
         if isprime:
             yield i
             for val in range(i * i, num, i):
-                print(val)
                 true_list[val] = False
+
+
+if __name__ == "__main__":
+    result = seive_of_eratosthenes(100)
+    print(result)
