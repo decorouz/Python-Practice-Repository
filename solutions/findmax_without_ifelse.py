@@ -13,12 +13,11 @@ def find_max(x: int, y: int) -> int:
     Parameters
     ----------
     x,y: int
-        Value of the given numbers. Must be an integer.
+        Given interger values
 
     Returns
     -------
-    r: int
-        The result of the max between x and y.
+    Max between x and y.
 
     Reference
     ---------
@@ -32,5 +31,5 @@ def find_max(x: int, y: int) -> int:
 # Driver Code
 if __name__ == "__main__":
     print(find_max(2, 3))  # 3
-    print(find_max(2, -3))  # 2
-    print(find_max(-2, -3))  # -2
+    # print(find_max(2, -3))  # 2
+    # print(find_max(-2, -3))  # -2

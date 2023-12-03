@@ -14,10 +14,10 @@ Bonus: Create a generator that produces primes indefinitely
 (that is, without taking N as an input).
 
 """
-from typing import Generator, Any
+from typing import Any, Iterator
 
 
-def seive_of_eratosthenes(num: int) -> Generator[int, Any, None]:
+def seive_of_eratosthenes(num: int) -> Iterator[int]:
     """Generate all prime numbers less than given num.
 
     Parameters
