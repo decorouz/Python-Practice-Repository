@@ -1,9 +1,8 @@
-"""Problem.
-
+"""
 Given a list of words, determine whether the words can be 
-chained to form a circle. A word X can be placed in front of another 
-word Y in a circle if the last character of X is same as the first 
-character of Y.
+chained to form a circle. 
+A word X can be placed in front of another word Y in a circle 
+if the last character of X is same as the first character of Y.
 
 For example, the words ['chair', 'height', 'racket', touch', 'tunic'] 
 can form the following 
@@ -105,7 +104,6 @@ class Graph:
 # if the given array of strings can be chained to
 # form cycle
 def can_be_chained(arr, n):
-
     # Create a graph with 'alpha' edges
     g = Graph(CHARS)
 
@@ -121,16 +119,17 @@ def can_be_chained(arr, n):
 
 
 # Driver program
-arr1 = ["for", "geek", "rig", "kaf"]
-n1 = len(arr1)
-if can_be_chained(arr1, n1):
-    print("Can be chained")
-else:
-    print("Cant be chained")
+if __name__ == "main":
+    arr1 = ["for", "geek", "rig", "kaf"]
+    n1 = len(arr1)
+    if can_be_chained(arr1, n1):
+        print("Can be chained")
+    else:
+        print("Cant be chained")
 
-arr2 = ["chair", "height", "racket", "touch", "tunic"]
-n2 = len(arr2)
-if can_be_chained(arr2, n2):
-    print("Can be chained")
-else:
-    print("Can't be chained")
+    arr2 = ["chair", "height", "racket", "touch", "tunic"]
+    n2 = len(arr2)
+    if can_be_chained(arr2, n2):
+        print("Can be chained")
+    else:
+        print("Can't be chained")

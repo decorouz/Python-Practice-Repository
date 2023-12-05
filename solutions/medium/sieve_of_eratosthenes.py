@@ -14,7 +14,7 @@ Bonus: Create a generator that produces primes indefinitely
 (that is, without taking N as an input).
 
 """
-from typing import Any, Iterator
+from typing import Iterator
 
 
 def seive_of_eratosthenes(num: int) -> Iterator[int]:
@@ -37,6 +37,24 @@ def seive_of_eratosthenes(num: int) -> Iterator[int]:
             yield i
             for val in range(i * i, num, i):
                 true_list[val] = False
+
+
+def optimized_sieve_of_eratosthenes(num: int) -> list[int]:
+    """Generate all prime numbers less than a given number"""
+    if num <= 2:
+        return []
+
+    is_prime = [True] * num
+    is_prime[0] = is_prime[1] = False
+
+    for i in range(2, int(num**0.5) + 1):
+        if is_prime[i]:
+            for k in range(i * i, num, i):
+                is_prime[k] = False
+
+    # collect the prime numbers
+    primes = [i for i in range(2, num) if is_prime[i]]
+    return primes
 
 
 if __name__ == "__main__":
