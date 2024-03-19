@@ -2,11 +2,11 @@
 Welcome to my Python practice repository! This repository contains my practice exercises, lessons, and projects related to Python programming. Whether you're new to Python or looking to enhance your skills like me, you'll find a variety of resources here that has helped me grow as a Python developer. 
 
 # Table of Content
-* [Overview](https://vscode.dev/github/decorouz/Daily-Algorithm-Challenge/blob/main/README.md#L12)
-* Folder Structure
-* Getting Started
-* Contributing
-* Licence
+* [Overview](#overview)
+* [Folder Structure](#folder-structure)
+* [Getting Started](#getting-started)
+* [Contributing](#contributing)
+* [Licence](#license)
 
 
 # Overview
