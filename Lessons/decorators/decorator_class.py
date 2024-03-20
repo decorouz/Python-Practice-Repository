@@ -3,10 +3,13 @@
 You want to defind decorator inside a class definition and apply
 it to other functions or method.
 """
+
 from functools import wraps
 
 
 class A:
+    """An example class"""
+
     def decorator1(self, func):
         """Decorator as an instance method."""
 
