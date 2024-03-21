@@ -17,6 +17,7 @@ class CountCalls:
     # Extend functionality, execute function and return result
     def __call__(self, *args: Any, **kwargs: Any) -> Any:
         self.num_calls += 1
+        print(f"Call {self.num_calls} of {self.func.__name__!r}")
         return self.func(*args, **kwargs)
 
 
@@ -25,4 +26,7 @@ def say_hello(num):
     print("Hello")
 
 
+say_hello(5)
+say_hello(5)
+say_hello(5)
 say_hello(5)
