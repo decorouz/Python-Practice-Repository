@@ -19,9 +19,19 @@ be able to fit anything else in the knapsack.
 Write a test case for this challenge"""
 
 
-def knapsack(capacity: int, weights: list[int], values: list[int]):
-    """Compute the max value of items a knapsack can carry"""
+def knapsack(capacity: int, weights: list[int], values: list[int]) -> tuple:
+    """Find the maximum value items a knapsack can carry.
+
+    Args:
+        capacity (int): maximum capacity of the knapsack
+        weights (list[int]): weights of the items
+        values (list[int]): value of the items
+
+    Returns:
+        tuple: value and index of the items
+    """
     n = len(values)
+    # Initialize all possible combination of items
     dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]
     for i in range(1, (n + 1)):
         for w in range(1, capacity + 1):
@@ -31,7 +41,7 @@ def knapsack(capacity: int, weights: list[int], values: list[int]):
                 dp[i][w] = max(
                     dp[i - 1][w], values[i - 1] + dp[i - 1][w - weights[i - 1]]
                 )
-
+    print(dp)
     # Get the selected items
     selected_items = []
     w = capacity
@@ -41,12 +51,13 @@ def knapsack(capacity: int, weights: list[int], values: list[int]):
             w -= weights[i - 1]
 
     selected_items.reverse()
-    return dp[n][capacity], selected_items
+    return (dp[n][capacity],)
 
 
 # Driver code
 if __name__ == "__main__":
     KL = 10
-    items_weight = [3, 6, 2, 2, 8]
+    items_weight = [1, 6, 2, 2, 8]
     items_value = [50, 60, 300, 2, 100]
-    print(knapsack(KL, items_weight, items_value))
+    result = knapsack(KL, items_weight, items_value)
+    print(result)
