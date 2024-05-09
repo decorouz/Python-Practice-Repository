@@ -10,7 +10,7 @@ while COUNTER <= N:
     TOTAL_SUM += COUNTER
     COUNTER += 1
 
-print(f"The sum of 1 until {N} is {TOTAL_SUM}")
+# print(f"The sum of 1 until {N} is {TOTAL_SUM}")
 
 
 # Write a program, which asks for the initial balance K0 and for the interest rate.
@@ -22,9 +22,11 @@ K = float(input("Starting balance? "))
 P = float(input("Interest rate? "))
 N = float(input("Number of year? "))
 
-i = 0
-while i < N:
-    K += K * N / 100
-    i += 1
-    print(i, K)
-print(f"Capital after {N}ys: {K}")
+# Initialize the number of years
+n = 0
+while n <= N:
+    # calculate the new capital after one year
+    K += K * P / 100
+    n += 1
+    print(n, K)
+print(f"Capital after {N} yrs: {K}")

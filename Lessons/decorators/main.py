@@ -1,11 +1,17 @@
-# Decorator without wrap
+# Decorator with wrap
 
 
 import time
 from functools import wraps
+from typing import Callable, TypeVar
+
+from typing_extensions import ParamSpec
+
+P = ParamSpec("P")
+T = TypeVar("T")
 
 
-def timeit(func, *args, **kwargs):
+def timeit(func: Callable[P, T], *args, **kwargs) -> Callable[P, T]:
     """Custom decorator to compute function run time"""
 
     @wraps(func)
@@ -24,6 +30,7 @@ def timeit(func, *args, **kwargs):
 
 @timeit
 def add(x, y):
+    """Does some math"""
     return x + y
 
 

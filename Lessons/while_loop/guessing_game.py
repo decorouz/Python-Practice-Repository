@@ -1,24 +1,31 @@
-"""A simple guessing game to demonstrate the use of else inside while loop"""
+"""A simple guessing game to demonstrate the use of `else` inside while loop
+A player has to guess a number between the range of 1 and n."""
+
 from random import randint
 
+# Initialize the the game
 GUESS = 0
+
+# Initialize the guess range
 UPPER_BOUND = 50
 LOWER_BOUND = 1
+
+# Set the secret random number(int) to be guess
 to_be_guessed = randint(LOWER_BOUND, UPPER_BOUND)
 print(to_be_guessed)
 
 while GUESS != to_be_guessed:
-    GUESS = int(input("New number : "))
+    GUESS = int(input("Num number: "))
     if GUESS == 0:
-        print("Sorry you are giving up")
+        print("Sorry that you are giving up")
         break
     if GUESS < LOWER_BOUND or GUESS > UPPER_BOUND:
-        print("Guess not within boundaries")
+        print("Your guess is out of range")
     elif GUESS > to_be_guessed:
         UPPER_BOUND = GUESS - 1
-        print("Number too high")
+        print("Guess Number too large")
     elif GUESS < to_be_guessed:
         LOWER_BOUND = GUESS + 1
-        print("Number is too small")
+        print("Guessed Number is too small")
 else:
-    print("Congratulations, you made it here")
+    print("Congratulation, you made it here")

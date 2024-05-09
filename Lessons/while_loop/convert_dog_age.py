@@ -1,4 +1,4 @@
-"""A program that converts a dog age"""
+# """A program that converts a dog age"""
 
 # Given the program below
 dog_age = int(input("Age of the dog: "))
@@ -21,14 +21,15 @@ else:
 dog_age, human_age = 0, 0
 
 while dog_age == human_age:
-    dog_age = int(input("Age of the dog: "))
+    dog_age = int(input("Enter the Age of the Dog: "))
     if dog_age <= 0:
         human_age = -1
-        print("Negative values or zero makes no sense for a dog age!")
+        print("Sorry to see you finish. Zero or negative years are not a valid input")
         break
     if dog_age == 1:
         human_age += 14
     else:
-        human_age += 22 + (dog_age - 2) * 5
+        human_age = 22 + (dog_age - 2) * 5
+
 else:
     print(f"Corresponds to {human_age} human years!")

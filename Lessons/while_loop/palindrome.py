@@ -4,13 +4,13 @@ For example, `racecar` and `gohangasalamiimalasagnahog` are palindromes.
 """
 
 
-def is_palindrome(strs: str) -> bool:
-    """Determine if string is palindrome"""
-    if strs[0] != strs[-1]:
+def is_palindrome(string: str) -> bool:
+    if string[0] != string[-1]:
         return False
-    left, right = 0, len(strs) - 1
-    while left < right:
-        if strs[left] != strs[right]:
+
+    left, right = 0, len(string) - 1
+    while left <= right:
+        if string[left] != string[right]:
             return False
         left += 1
         right -= 1
@@ -20,7 +20,7 @@ def is_palindrome(strs: str) -> bool:
 if __name__ == "__main__":
     input_str = "gohangasalamiimalasagnahog"
     input_str2 = "racecar"
-    result1 = is_palindrome(input_str)
-    result2 = is_palindrome(input_str2)
-    print(result1)
-    print(result2)
+    palendrome1 = is_palindrome(input_str)
+    palendrome2 = is_palindrome(input_str2)
+    print(palendrome1)
+    print(palendrome2)
