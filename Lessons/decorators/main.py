@@ -3,6 +3,7 @@
 
 import time
 from functools import wraps
+from math import sqrt
 from typing import Callable, TypeVar
 
 from typing_extensions import ParamSpec
@@ -29,9 +30,14 @@ def timeit(func: Callable[P, T], *args, **kwargs) -> Callable[P, T]:
 
 
 @timeit
-def add(x, y):
+def pythogoras_theorem(n):
     """Does some math"""
-    return x + y
+    for a in range(1, n + 1):
+        for b in range(a, n):
+            c_square = a**2 + b**2
+            c = int(sqrt(c_square))
+            if (c_square - c**2) == 0:
+                print(a, b, c)
 
 
-add(1, 2)
+pythogoras_theorem(35)
